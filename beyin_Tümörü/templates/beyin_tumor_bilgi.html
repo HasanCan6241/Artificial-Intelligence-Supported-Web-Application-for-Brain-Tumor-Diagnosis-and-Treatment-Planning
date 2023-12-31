@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beyin Tümörleri</title>
+    <style>
+        /* Genel stiller */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #00bcd4, #0097a7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header stilleri */
+        header {
+            text-align: center;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* İçerik stilleri */
+        section {
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px #888888;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        section p {
+            font-size: 16px;
+        }
+
+        /* Navbar stilleri */
+        nav {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+            position: relative; /* Alt menüyü gizlemek için üst menüye göre pozisyon ayarla */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Alt menü stilleri */
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            flex-direction: column; /* Alt menü öğelerini dikey hizala */
+            width: 200px;
+        }
+
+        /* Üst menüye gelindiğinde alt menüyü göster */
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+        .logo {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="/"> <img src="{{ url_for('static', filename='heart.png') }}" width="50px" alt="Proje Logosu"></a>
+        </div>
+        <ul>
+            <li>
+                <a href="/">Anasayfa</a>
+            </li>
+            <li>
+                <a href="/">Beyin Tümörü</a>
+                <div class="submenu">
+                    <a href="/beyin-tumor-tahmin">Beyin Tümörü Tahmin</a>
+                    <a href="/beyin-tumor">Beyin Tümörü Bilgi</a>
+                </div>
+            </li>
+            <li><a href="/hakkımızda">Hakkımızda</a></li>
+            <li><a href="/">İletişim</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Beyin Tümörleri</h1>
+    </header>
+     <img src="{{ url_for('static', filename='_e57dc32b-e8c9-47e4-932d-cf8404323624.jpeg') }}" width="600px" height="350px" alt="Tümör">
+    <section id="nedir">
+        <h2>Beyin Tümörleri Nedir?</h2>
+        <p>Beyin tümörleri, beyindeki anormal hücre büyümesi sonucu oluşan kitlelerdir. Genellikle zararlı ve potansiyel olarak ölümcül olabilirler.</p>
+        <p>Beyin tümörlerinin türleri, büyüme hızları ve yerleştikleri bölgelere göre farklılık gösterir. İyi huylu (benign) veya kötü huylu (malign) olabilirler.</p>
+    </section>
+
+    <section id="neden-olusur">
+        <h2>Beyin Tümörleri Neden Oluşur?</h2>
+        <p>Beyin tümörlerinin neden oluştuğu tam olarak bilinmemekle birlikte, genetik faktörler, radyasyon maruziyeti, çevresel faktörler ve hormonal değişiklikler gibi etkenlerin rol oynayabileceği düşünülmektedir.</p>
+        <p>Ayrıca, bazı tümörlerin nedeni tamamen anlaşılamayabilir.</p>
+    </section>
+
+    <section id="semptomlar">
+        <h2>Beyin Tümörü Semptomları</h2>
+        <p>Beyin tümörlerinin semptomları, büyüklüğüne, yerleşim yerine ve çevresel etkilere bağlı olarak değişebilir. Temel semptomlar şunları içerebilir:</p>
+        <ul>
+            <li>Baş ağrısı</li>
+            <li>Denge kaybı</li>
+            <li>Nöbetler</li>
+            <li>Görme problemleri</li>
+            <li>Zihinsel değişiklikler</li>
+        </ul>
+    </section>
+
+    <section id="tanisi">
+        <h2>Beyin Tümörü Tanısı</h2>
+        <p>Beyin tümörlerinin tanısı, genellikle radyolojik görüntüleme yöntemleri (MRI, CT taramaları), biyopsi ve diğer tıbbi testlerle yapılır. Tanı, tümörün türü, büyüklüğü ve yerleşimi hakkında bilgi sağlar.</p>
+    </section>
+
+    <section id="onleme">
+        <h2>Beyin Tümörlerini Önleme</h2>
+        <p>Ne yazık ki, beyin tümörlerini tamamen önlemek mümkün değildir. Ancak sağlıklı bir yaşam tarzı sürdürmek, radyasyondan korunmak ve zararlı kimyasallara maruziyeti en aza indirmek riski azaltabilir.</p>
+    </section>
+
+    <section id="erken-teshis">
+        <h2>Erken Teşhisin Önemi</h2>
+        <p>Erken teşhis, hastanın yaşam kalitesini artırabilir ve sağkalım şansını artırabilir. Düzenli tıbbi kontroller ve risk altındaki bireylerin takibi önemlidir.</p>
+    </section>
+
+    <section id="istatistikler">
+        <h2>İstatistiksel Bilgiler</h2>
+        <p>Her yıl dünya genelinde ortalama 14.6/100,000 kişide beyin tümörleri görülür. Bu tümörlerin insidansı yaş, cinsiyet ve coğrafyaya göre değişiklik gösterebilir.
+        Beyin tümörleri her yaş grubunda görülebilir, ancak bazı türler özellikle çocukluk döneminde daha yaygındır. Yetişkinlerde ise daha sık görülür.
+        Beyin tümörleri çocuklarda görülen kanserlerin yaklaşık %20'sini oluşturur. Bunlar arasında en yaygın olanları medulloblastoma ve gliomlar gibi türlerdir.</p>
+    </section>
+
+    <section id="yapay-zeka">
+        <h2>Yapay Zekanın Önemi</h2>
+        <p>Beyin tümörleri, erken aşamalarda teşhis edildiğinde tedavi şansı artar. Yapay zeka, büyük veri analizi ve öğrenme algoritmaları sayesinde erken teşhis için hassas bir araç sağlayabilir. Bu, hastaların daha erken tedaviye başlamalarına olanak tanır.
+        Beyin tümörleri farklı tiplere ve derecelere sahip olabilir. Yapay zeka, bu tümörleri hassas bir şekilde sınıflandırabilir, böylece doğru tedavi planları oluşturulabilir.Özellikle malign (kötü huylu) tümörlerin türünü belirlemek, tedavi stratejileri açısından hayati öneme sahiptir. </p>
+    </section>
+</body>
+</html>

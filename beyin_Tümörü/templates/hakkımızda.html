@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hakkımızda</title>
+    <style>
+        /* Genel stiller */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Başlık stilleri */
+        header {
+            text-align: center;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #007bff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* İçerik stilleri */
+        section {
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px #888888;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin: 0;
+            color: #00bcd4; /* Başlık rengi */
+        }
+
+        section p {
+            font-size: 16px;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+            position: relative; /* Alt menüyü gizlemek için üst menüye göre pozisyon ayarla */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Alt menü stilleri */
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            flex-direction: column; /* Alt menü öğelerini dikey hizala */
+            width: 200px;
+        }
+
+
+        /* Üst menüye gelindiğinde alt menüyü göster */
+        nav ul li:hover .submenu {
+            display: block;
+        }
+        .logo {
+            float: left;
+        }
+        .h1{
+            color: #007bff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+             <div class="logo">
+                <a href="/"> <img src="{{ url_for('static', filename='heart.png') }}" width="50px" alt="Proje Logosu"></a>
+            </div>
+            <ul>
+                <li>
+                <a href="/">Anasayfa</a>
+                </li>
+                <li>
+                    <a href="/">Beyin Tümörü</a>
+                    <div class="submenu">
+                        <a href="/beyin-tumor-tahmin">Beyin Tümörü Tahmin</a>
+                        <a href="/beyin-tumor">Beyin Tümörü Bilgi</a>
+                    </div>
+                </li>
+                <li><a href="/hakkımızda">Hakkımızda</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    <header>
+        <h1>Hakkımızda</h1>
+    </header>
+
+    <section>
+        <h2>Proje Amacı</h2>
+        <p>Beyin tümörlerini tahmin etmek ve teşhis etmek için geliştirdiğimiz yapay zeka projemizin amacı, erken teşhis ve tedavi şansını artırmaktır. Bu projeyi başlatma nedenimiz, beyin tümörlerinin ciddiyetini anlamak ve tıbbi alanda yapay zeka kullanarak hastalara yardımcı olmak için teknolojiyi kullanma isteğimizdir.</p>
+    </section>
+
+    <section>
+        <h2>Ekibimiz</h2>
+        <p>Projemiz, uzman bir ekip tarafından geliştirilmektedir. Her bir ekip üyesi, yapay zeka, tıp, veri bilimi ve yazılım geliştirme konularında uzmandır. Ekibimiz, projemizin başarılı olması için bir araya geldi ve aynı vizyonu paylaşıyor.</p>
+    </section>
+
+    <section>
+        <h2>Projemizin Hedefleri</h2>
+        <p>Projemizin başlıca hedefi, beyin tümörlerinin daha erken teşhis edilmesini sağlayarak hastaların yaşam kalitesini artırmaktır. Ayrıca, farklı türdeki beyin tümörlerini sınıflandırarak, tedavi stratejilerine rehberlik etmek istiyoruz. Projemizin ilerleyen aşamalarında daha fazla başarıya ulaşmayı hedefliyoruz.</p>
+    </section>
+
+    <section>
+        <h2>Teknoloji ve Yöntemler</h2>
+        <p>Projemizde kullanılan teknolojileri ve yöntemleri açıklamak için en son teknolojileri ve yapay zeka algoritmalarını kullandık. Bu, doğru ve hızlı teşhisler yapmamıza olanak tanıdı.</p>
+    </section>
+
+    <section>
+        <h2>Projeye Destek</h2>
+        <p>Projemizi destekleyen ve finanse eden kuruluşları veya kişileri belirtmekten gurur duyuyoruz. Bu destek, projemizin başarısına büyük katkı sağladı.</p>
+    </section>
+
+    <section>
+        <h2>Projemizin Geleceği</h2>
+        <p>Projemizin geleceğinde daha fazla gelişme ve iyileştirme yapmayı hedefliyoruz. Beyin tümörlerinin teşhis ve tedavi yöntemlerini geliştirmek için çalışmaya devam edeceğiz.</p>
+    </section>
+
+    <section>
+        <h2>Sosyal Sorumluluk</h2>
+        <p>Projemizin bir parçası olarak, topluma daha fazla fayda sağlama amacındayız. Beyin tümörleri ile ilgili farkındalık yaratma ve yardım etme konusundaki çalışmalarımız devam edecektir.</p>
+    </section>
+
+    <section>
+        <h2>İletişim Bilgileri</h2>
+        <p>Projemiz hakkında daha fazla bilgi almak veya iletişime geçmek isterseniz, lütfen aşağıdaki iletişim bilgilerini kullanın:</p>
+        <p>E-posta: <a href="mailto:hasancan.celik6241@gmail.com">hasancan.celik6241@gmail.com</a></p>
+        <p>Telefon: +90 123 456 78 90</p>
+    </section>
+
+</body>
+</html>

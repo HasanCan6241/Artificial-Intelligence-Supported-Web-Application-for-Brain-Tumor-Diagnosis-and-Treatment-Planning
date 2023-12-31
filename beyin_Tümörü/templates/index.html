@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Beyin Tümörü Tespit</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #4CAF50, #2E8B57);
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .tumor-info {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        .tumor-description {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        .usage-areas {
+            margin-top: 20px;
+        }
+
+        .usage-areas p {
+            font-size: 18px;
+        }
+
+        .tumor-classes {
+            margin-top: 20px;
+        }
+
+        .tumor-classes p {
+            font-size: 18px;
+        }
+         nav {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+            position: relative; /* Alt menüyü gizlemek için üst menüye göre pozisyon ayarla */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Alt menü stilleri */
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            flex-direction: column; /* Alt menü öğelerini dikey hizala */
+            width: 200px;
+        }
+
+
+        /* Üst menüye gelindiğinde alt menüyü göster */
+        nav ul li:hover .submenu {
+            display: block;
+        }
+        .logo {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+             <div class="logo">
+                <a href="/"> <img src="{{ url_for('static', filename='heart.png') }}" width="50px" alt="Proje Logosu"></a>
+            </div>
+            <ul>
+                <li>
+                <a href="/">Anasayfa</a>
+                </li>
+                <li>
+                    <a href="/">Beyin Tümörü</a>
+                    <div class="submenu">
+                        <a href="/beyin-tumor-tahmin">Beyin Tümörü Tahmin</a>
+                        <a href="/beyin-tumor">Beyin Tümörü Bilgi</a>
+                    </div>
+                </li>
+                <li><a href="/hakkımızda">Hakkımızda</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <img src="{{ url_for('static', filename='_c125d2f0-3991-4fd4-9ddb-0a0b561cbf07.jpeg') }}" width="800px" height="400px" alt="Asistan">
+        <h2>Proje Amaçları</h2>
+        <p>Projenin amacı beyin tümörlerini doğru bir şekilde tahmin etmek ve teşhis etmek için yapay zeka kullanmaktır. Aynı zamanda arka planda ChatGpt'yi kullanarak hastalığınıza göre tedavi planlama süreci önermektedir.</p>
+        <h2>Projenin Faydaları</h2>
+        <p>Projenin faydaları şunlar olabilir:
+            <ul>
+                <li>Erken Teşhis ve Hızlı Müdahale: Beyin tümörlerini erken teşhis etmek, hastalığın ilerlemesini engellemek veya tedavi sürecini hızlandırmak için önemlidir. Yapay zeka destekli sistemler, hızlı ve doğru teşhislerle erken müdahale şansını artırabilir.</li>
+                <br>
+                <li>Bireyselleştirilmiş Tedavi Planları: ChatGPT gibi yapay zeka modelleri, hastaların özelliklerine ve tıbbi geçmişlerine dayanarak bireyselleştirilmiş tedavi önerileri sunabilir. Bu, her hastanın ihtiyaçlarına göre özelleştirilmiş tedavi planlarının geliştirilmesine yardımcı olabilir.</li>
+                <br>
+                <li>Hasta Bakımında İyileşme: Yapay zeka destekli sistemler, sağlık uzmanlarına ve hastalara, tedavi sürecinde daha iyi destek ve rehberlik sağlayabilir. Bu da hasta bakımında iyileşme ve daha etkili sonuçlar elde etme potansiyeli sunar.</li>
+                <br>
+                <li>Kaynakların Verimli Kullanımı: Yapay zeka, sağlık sistemlerindeki kaynakları daha verimli kullanmaya yardımcı olabilir. Doğru teşhisler ve tedavi önerileri, zaman ve kaynakların etkin bir şekilde kullanılmasına olanak tanır.</li>
+                <br>
+                <li>Bilgi ve Farkındalık Artışı: Bu tarz projeler, geniş kitlelere sağlık konuları hakkında bilgi verme ve farkındalık oluşturma potansiyeline sahiptir. Beyin tümörleri gibi ciddi hastalıklar hakkında toplumsal farkındalık arttıkça, erken teşhis ve tedaviye erişim de artabilir.</li>
+                <br>
+                <li>Tedavi Sürecinde Destek: ChatGPT gibi sistemler, hastaların veya hasta yakınlarının tedavi süreci hakkında bilgi alabilecekleri ve sorularını cevaplayabilecekleri bir platform sağlayarak psikolojik ve duygusal destek sunabilir.</li>
+            </ul>
+        </p>
+
+        <h2>Projenin Kullanım Alanları</h2>
+        <div class="usage-areas">
+            <p>Proje, beyin tümörlerinin teşhisi ve tahmini konularında geniş bir kullanım alanına sahiptir. Aşağıda projenin kullanılabileceği bazı alanlar bulunmaktadır:</p>
+            <ul>
+                <li>Sağlık Sektörü: Beyin tümörlerinin hızlı teşhis edilmesi ve tedavi planlarının geliştirilmesi.</li>
+                <br>
+                <li>Araştırma: Beyin tümörleri üzerine yapılacak araştırmalarda verilerin analizi ve sonuçların çıkarılması.</li>
+                <br>
+                <li>Eğitim: Tıp eğitiminde öğrencilere klinik teşhis becerilerinin geliştirilmesi.</li>
+                <br>
+                <li>Hasta Danışmanlığı ve Destek:  ChatGPT gibi doğal dil işleme modelleri, hastaların veya hasta yakınlarının sorularını yanıtlayabilir, tıbbi terimleri açıklayabilir ve psikolojik destek sağlayabilir.</li>
+                <br>
+                <li>Bireyselleştirilmiş Tedavi Planları: Hastaların tıbbi geçmişi, semptomları ve genetik profilleri gibi faktörlere dayanarak bireyselleştirilmiş tedavi planları oluşturabilir veya önerilerde bulunabilir.</li>
+                <br>
+                <li>Tıbbi Araştırma ve Gelişme: Yapay zeka, büyük miktarda veriyi analiz ederek yeni tedavi yöntemlerini veya tıbbi keşifleri hızlandırabilir. Bu, yeni tedavi protokollerinin veya ilaçların geliştirilmesine katkıda bulunabilir.</li>
+            </ul>
+        </div>
+
+        <h2>Yapay Zekanın Rolü</h2>
+        <p>Yapay zeka, bu projede beyin tümörlerinin teşhisi, sınıflandırılması ve tedavi süreçlerinin iyileştirilmesinde kritik bir rol oynuyor. Görüntü işleme algoritmaları, tümörleri tanımlamak ve sınıflandırmak için kullanılırken, doğal dil işleme modelleri hasta özelleştirilmiş tedavi planları öneriyor. Ayrıca, hasta iletişimi, veri analizi ve sürekli öğrenme süreçleriyle, daha etkili, erken teşhisler ve kişiselleştirilmiş bakım sağlama potansiyeline sahip olabilir. Bu sayede yapay zeka, tıbbi alanda daha iyi ve yenilikçi bir destek sunarak sağlık hizmetlerinin kalitesini artırabilir.</p>
+
+        <div class="tumor-info">
+            <h2>Beyin Tümörü Sınıfları</h2>
+            <p>Projede Glioma, Meningioma ve Pituitary tümör sınıfları tanımlanmıştır. İşte bu sınıfların açıklamaları:</p>
+            <div class="tumor-classes">
+                <h3>Glioma</h3>
+                <p>Glioma, beynin glial hücrelerinden kaynaklanan bir tür beyin tümörüdür. Glial hücreler, sinir hücreleriyle birlikte çalışarak sinir sisteminin desteklenmesinden ve korunmasından sorumludur. Bu tümör, genellikle hızlı büyür ve agresif bir seyir gösterebilir. Beyindeki bu tür tümörler, beyin dokusunda büyüme eğilimindedir ve genellikle beyin fonksiyonları üzerinde ciddi etkileri olabilir. Glioma, çeşitli alt türleri (örneğin, astrocytoma, oligodendroglioma, ependimoma gibi) olan bir tümör kategorisini ifade eder ve tedavi seçenekleri genellikle cerrahi müdahale, radyasyon ve kemoterapi gibi yöntemleri içerebilir.</p>
+            </div>
+            <div class="tumor-classes">
+                <h3>Meningioma</h3>
+                <p>Meningioma, beyin zarları (meninksler) adı verilen dış zar tabakalarından kaynaklanan, genellikle iyi huylu olarak sınıflandırılan bir beyin tümörü türüdür. Bu tür tümörler, genellikle yavaş büyüme eğilimindedir ve beyin dışındaki dokulara doğru genişleme gösterme eğilimindedir. Genellikle belirgin semptomlar üretmezler ve sıklıkla rastlantısal olarak teşhis edilebilirler. Ancak, büyüdüklerinde veya belli bir noktada baskı yapmaya başladıklarında baş ağrısı, görme problemleri veya diğer nörolojik semptomlara yol açabilirler. Tedavide, genellikle cerrahi müdahale önerilir ve tümörün büyüklüğüne, konumuna ve hastanın genel sağlık durumuna bağlı olarak tedavi planı belirlenir.</p>
+            </div>
+            <div class="tumor-classes">
+                <h3>Pituitary Tümör</h3>
+                <p>Pituitary tümör, hipofiz bezi (veya pituiter bez) adı verilen küçük bir bezden kaynaklanan bir tür beyin tümörüdür. Bu bez, vücuttaki hormonların salınımını düzenler. Pituitary tümörler genellikle hormon salınımını etkileyebilir ve bu da hormonal dengesizliklere yol açabilir. Bu tümörlerin semptomları, genellikle hormon üretimine bağlı olarak değişebilir. Örneğin, prolaktin, büyüme hormonu, kortizol veya tiroid hormonları gibi hormonlarda artış veya azalma gibi semptomlar görülebilir. Tedavide, hormon dengesizlikleri kontrol altına alınmaya çalışılır ve tümörün boyutuna, konumuna ve semptomlara göre cerrahi müdahale veya radyoterapi gibi seçenekler değerlendirilebilir.</p>
+            </div>
+        </div>
+
+        <h2>Tümör Sınıfları Arasındaki Farklar ve Tehlike Derecesi</h2>
+        <p>Beyin tümörlerinin sınıfları arasındaki farklar genellikle tümörün köken aldığı dokudan, büyüme hızından ve kanserle ilişkili özelliklerden kaynaklanır. Bu tümörlerin sınıflandırılması ve derecelendirilmesi genellikle tümörün hücresel yapısı, büyüme hızı ve agresifliği gibi faktörlere dayanır. İşte bu tümörler arasındaki temel farklar: :</p>
+        <ul>
+            <li> Glioma vs. Meningioma:
+                Köken Aldığı Dokular: Gliomalar, beynin destek dokusundan (glial hücrelerden) kaynaklanırken, meningiomalar, beyin zarlarından (meninksler) kaynaklanır.
+                Büyüme Hızı ve Agresiflik: Genellikle gliomalar, agresif bir seyir gösterir ve hızlı büyüme eğilimindedir. Meningiomalar ise genellikle yavaş büyüme eğilimindedir ve genellikle iyi huylu olarak sınıflandırılır.</li>
+            <br>
+            <li> Meningioma vs. Pituitary Tümör:
+                Köken Aldığı Dokular: Meningiomalar, beyin zarlarından köken alırken, pituitary tümörler hipofiz bezinden kaynaklanır.
+                Hormonal Etki ve Semptomlar: Pituitary tümörler, genellikle hormon üretimini etkileyebilir ve bu nedenle hormon dengesizlikleri gibi semptomlara yol açabilir. Meningiomalar genellikle hormonal etkiler göstermez ve genellikle hormonal dengesizliklerle ilişkilendirilmez.</li>
+            <h3>Tehlike Derecesi (Tümör Derecelendirmesi):</h3>
+            <li>Gliomaların Tehlikesi: Gliomalar genellikle daha agresif ve hızlı büyüme eğiliminde oldukları için daha yüksek dereceli tümörler olarak kabul edilir. Derecelendirme genellikle I'den IV'e kadar yapılır, IV derecesi en agresif ve tehlikeli olanı ifade eder.</li>
+            <br>
+            <li>Meningiomaların Tehlikesi: Meningiomalar genellikle daha düşük dereceli tümörlerdir ve genellikle iyi huylu olarak sınıflandırılırlar. Düşük dereceli meningiomalar (örneğin, derece I) genellikle daha az tehlikelidir, ancak nadiren daha yüksek dereceli ve daha hızlı büyüyenler de görülebilir.</li>
+            <br>
+            <li>Pituitary Tümörlerin Tehlikesi: Pituitary tümörlerinin tehlike derecesi, büyüme hızı ve hormonal etkilerine bağlı olarak değişir. Hormonal denge üzerindeki etkileri nedeniyle bazı durumlarda ciddi sağlık sorunlarına yol açabilirler.</li>
+        </ul>
+    </div>
+</body>
+</html>

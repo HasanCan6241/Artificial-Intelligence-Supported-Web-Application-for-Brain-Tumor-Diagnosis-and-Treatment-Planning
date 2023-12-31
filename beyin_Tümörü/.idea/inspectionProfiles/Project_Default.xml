@@ -1,0 +1,22 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="logininfo" />
+          <option value="email.MIMEBase" />
+          <option value="email.MIMEMultipart" />
+          <option value="main.raw_input" />
+          <option value="openpyx1" />
+          <option value="url_Parameter.requests_html" />
+          <option value="HTMLSession" />
+          <option value="j" />
+          <option value="all_Cities.requests_html" />
+          <option value="streamlit" />
+          <option value="tensorflow.keras" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

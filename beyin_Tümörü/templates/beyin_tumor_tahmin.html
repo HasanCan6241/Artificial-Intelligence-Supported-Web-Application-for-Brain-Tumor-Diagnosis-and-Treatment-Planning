@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beyin Tümörü Sınıflandırma Uygulaması</title>
+    <style>
+        /* Genel sayfa stilleri */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Form stilleri */
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            max-width: 400px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        /* Dosya yükleme alanı stilleri */
+        .file-input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0; /* Butonlar arasında 10px boşluk ekler */
+        }
+
+        /* Dosya yükleme alanı için buton stilleri */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0; /* Butonlar arasında 10px boşluk ekler */
+        }
+
+        /* Dosya seçme butonu stilleri */
+        .custom-file-input {
+            display: none; /* Gerçek dosya seçme gizle */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .custom-file-label {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .custom-file-label:hover {
+            background-color: #0056b3;
+        }
+
+        /* Navbar stilleri */
+        nav {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+            position: relative; /* Alt menüyü gizlemek için üst menüye göre pozisyon ayarla */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Alt menü stilleri */
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            flex-direction: column; /* Alt menü öğelerini dikey hizala */
+            width: 200px;
+        }
+
+
+        /* Üst menüye gelindiğinde alt menüyü göster */
+        nav ul li:hover .submenu {
+            display: block;
+        }
+        .logo {
+            float: left;
+        }
+        h1 {
+            color: #007bff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        }
+        .image-container img {
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 100%;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .image-info {
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // image-container sınıfına sahip tüm elemanları seç
+            var imageContainers = document.querySelectorAll('.image-container');
+
+            // Her image-container elemanını döngüye al
+            imageContainers.forEach(function (container) {
+                // container içindeki tüm img elemanlarını seç
+                var images = container.querySelectorAll('img');
+
+                // Her img elemanını döngüye al
+                images.forEach(function (image) {
+                    // img elemanının altına sınıf adını içeren bir p etiketi ekle
+                    var className = image.classList[0]; // img'nin class adını al
+                    var p = document.createElement('p');
+                    p.textContent =className;
+                    image.parentNode.insertBefore(p, image.nextSibling); // img'nin altına ekle
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+             <div class="logo">
+                <a href="/"> <img src="{{ url_for('static', filename='heart.png') }}" width="50px" alt="Proje Logosu"></a>
+            </div>
+            <ul>
+                <li>
+                <a href="/">Anasayfa</a>
+                </li>
+                <li>
+                    <a href="/">Beyin Tümörü</a>
+                    <div class="submenu">
+                        <a href="/beyin-tumor-tahmin">Beyin Tümörü Tahmin</a>
+                        <a href="/beyin-tumor">Beyin Tümörü Bilgi</a>
+                    </div>
+                </li>
+                <li><a href="/hakkımızda">Hakkımızda</a></li>
+                <li><a href="/">İletişim</a></li>
+            </ul>
+        </nav>
+        <center>
+        <h1>Beyin Tümörü Sınıflandırma</h1>
+        </center>
+    <form method="post" action="/beyin-tumor-tahmin" enctype="multipart/form-data">
+        <div class="file-input-container">
+            <!-- Dosya seçme butonu -->
+            <label for="file" class="custom-file-label">Dosya Seç</label>
+            <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png" class="custom-file-input">
+            <!-- Resim yükle butonu -->
+            <input type="submit" value="Resmi Yükle ve Tahmin Et">
+        </div>
+    </form>
+    <br>
+    <br>
+    <center>
+    <h1>Örnek Mr Görüntüleri</h1>
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='G_21.jpg') }}" alt="Glioma Tümör" class="Glioma_Tümör">
+        <img src="{{ url_for('static', filename='M_605.jpg') }}" alt="Meningioma Tümör"class="Meningioma_Tümör">
+        <img src="{{ url_for('static', filename='N_117.jpg') }}" alt="Tümör Değil" class="Tümör_Değil">
+        <img src="{{ url_for('static', filename='P_33.jpg') }}" alt="Pituitary Tümör" class="Pituitary_Tümör">
+    </div>
+    </center>
+</body>
+</html>
