@@ -1,8 +1,6 @@
 <!-- Başlık -->
 # Beyin Tümörü Teşhisi ve Tedavi Planlaması için Yapay Zeka Destekli Web Uygulaması
 
-[Proje Görüntüsü / Logo]
-
 <!-- Açıklama -->
 Bu projede beyin tümörlerini doğru bir şekilde tahmin etmek ve teşhis etmek amacıyla yapay zeka kullanılmaktadır. Aynı zamanda ChatGPT aracılığıyla hastalığa özgü tedavi planlama süreçleri sunulmaktadır.
 
