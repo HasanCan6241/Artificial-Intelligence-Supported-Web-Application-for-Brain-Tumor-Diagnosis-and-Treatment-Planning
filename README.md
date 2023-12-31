@@ -33,14 +33,6 @@ Bu projede beyin tümörlerini doğru bir şekilde tahmin etmek ve teşhis etmek
 2. Gerekli bağımlılıkları yükleyin.
 3. Uygulamayı başlatmak için gereken adımları izleyin.
 
-## 🤝 Katkıda Bulunma
-
-1. Fork'layın (<https://github.com/kullanici_adi/proje-adı/fork>)
-2. Yeni bir dal oluşturun (`git checkout -b feature/fooBar`)
-3. Değişikliklerinizi yapın (`git commit -am 'Add some fooBar'`)
-4. Dalınıza push yapın (`git push origin feature/fooBar`)
-5. Bir Pull Talebi oluşturun
-
 ## Uygulama Arayüzü
 ### - Anasayfa
 ![Uygulama](İmages/Resim1.png)
